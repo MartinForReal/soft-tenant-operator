@@ -1,0 +1,32 @@
+language: go
+dist: bionic
+
+services:
+  - docker
+
+os:
+  - linux
+
+go:
+  - "1.14.2"
+
+before_script:
+  - sudo apt-get upgrade && sudo apt-get -y install bash
+  - "curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | sudo bash"
+
+
+script:
+  - fossa init
+  - fossa analyze
+  - bash -c "make docker-build IMAGE=mskj/soft-tenant-operator:latest"
+
+after_success:
+  - fossa test
+  - rm .fossa.yml
+
+deploy:
+  provider: script
+  script: bash -c "make docker-push IMAGE=mskj/soft-tenant-operator:latest"
+  on:
+    branch: master
+  skip_cleanup: true

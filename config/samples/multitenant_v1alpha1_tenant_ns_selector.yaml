@@ -1,0 +1,9 @@
+apiVersion: multitenant.mstech.com.cn/v1alpha1
+kind: Tenant
+metadata:
+  name: tenant-testns
+spec:
+  # label selector
+  customNamespaceSelector:
+    matchLabels:
+      app: nginx-ingress

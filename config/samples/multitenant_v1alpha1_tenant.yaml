@@ -1,0 +1,4 @@
+apiVersion: multitenant.mstech.com.cn/v1alpha1
+kind: Tenant
+metadata:
+  name: devops

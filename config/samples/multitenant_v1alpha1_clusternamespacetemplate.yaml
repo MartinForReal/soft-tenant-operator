@@ -1,0 +1,10 @@
+apiVersion: multitenant.mstech.com.cn/v1alpha1
+kind: ClusterNamespaceTemplate
+metadata:
+  name: default
+spec:
+  # Add fields here
+  templateChartSource:
+    repository: https://kubernetes-charts.storage.googleapis.com
+    name: redis
+    version: 7.0.1

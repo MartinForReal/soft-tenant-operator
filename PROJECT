@@ -1,0 +1,17 @@
+domain: mstech.com.cn
+multigroup: true
+repo: github.com/minsheng-fintech-corp-ltd/soft-tenant-operator
+resources:
+- group: multitenant
+  kind: Tenant
+  version: v1alpha1
+- group: multitenant
+  kind: NamespaceTemplate
+  version: v1alpha1
+- group: multitenant
+  kind: TenantNamespace
+  version: v1alpha1
+- group: multitenant
+  kind: ClusterNamespaceTemplate
+  version: v1alpha1
+version: "2"

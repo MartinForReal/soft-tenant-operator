@@ -1,0 +1,24 @@
+# permissions for end users to edit namespacetemplates.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: namespacetemplate-editor-role
+rules:
+- apiGroups:
+  - multitenant.mstech.com.cn
+  resources:
+  - namespacetemplates
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - multitenant.mstech.com.cn
+  resources:
+  - namespacetemplates/status
+  verbs:
+  - get

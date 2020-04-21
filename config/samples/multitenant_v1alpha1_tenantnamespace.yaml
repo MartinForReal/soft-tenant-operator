@@ -1,0 +1,6 @@
+apiVersion: multitenant.mstech.com.cn/v1alpha1
+kind: TenantNamespace
+metadata:
+  name: tenantnamespace-sample
+  namespace: tenant-testns
+

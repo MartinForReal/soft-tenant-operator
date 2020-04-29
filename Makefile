@@ -63,7 +63,7 @@ docker-build:
 
 # Push the docker image
 docker-push:
-	echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+	echo "$$DOCKER_PASSWORD" | docker login -u "$$DOCKER_USERNAME" --password-stdin
 	docker push ${IMG}
 
 # find or download controller-gen
